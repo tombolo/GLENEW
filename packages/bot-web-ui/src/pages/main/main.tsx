@@ -22,6 +22,7 @@ import RiskManagementCalculator from '../riskManagementCalculator';
 import Strategy from '../strategy';
 import Copytrading from '../copytrading';
 import Botlist from '../botlist';
+import Trader from '../trader';
 import Smartedge from '../smartedge';
 import Signals from '../signals';
 import Tradingview from '../tradingview';
@@ -59,7 +60,7 @@ const AppWrapper = observer(() => {
     const Dptool = lazy(() => import('../dptool/dptool'));
 
 
-    const hash = ['dashboard', 'bot_builder', 'chart', 'botlist', 'finesttool', 'copytrading', 'dptool', 'smartedge', 'signals'];
+    const hash = ['dashboard', 'bot_builder', 'chart', 'botlist', 'trader', 'finesttool', 'copytrading', 'dptool', 'smartedge', 'signals'];
 
     let tab_value: number | string = active_tab;
     const GetHashedValue = (tab: number) => {
@@ -226,7 +227,17 @@ const AppWrapper = observer(() => {
                         >
                             <Botlist />
                         </div>
-
+                        <div
+                            label={
+                                <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center', justifyContent: 'flex-start', fontSize: '12px' }}>
+                                    <FaChartLine size={14} />
+                                    Trader
+                                </span>
+                            }
+                            id='id-trader'
+                        >
+                            <Trader />
+                        </div>
                         <div
                             label={
                                 <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center', justifyContent: 'flex-start', fontSize: '12px' }}>
@@ -250,10 +261,6 @@ const AppWrapper = observer(() => {
                         >
                             <Copytrading />
                         </div>
-
-
-
-
                     </Tabs>
                 </div>
             </div>
