@@ -199,7 +199,7 @@ const AppWrapper = observer(() => {
                             label={
                                 <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center', justifyContent: 'flex-start', fontSize: '12px' }}>
                                     <FaExchangeAlt size={14} />
-                                    Free Bots
+                                    AI Bots
                                 </span>
                             }
                             id='id-botlist'
@@ -222,7 +222,7 @@ const AppWrapper = observer(() => {
                             label={
                                 <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center', justifyContent: 'flex-start', fontSize: '12px' }}>
                                     <FaChartLine size={14} />
-                                    Trader
+                                    D Trader
                                 </span>
                             }
                             id='id-trader'
