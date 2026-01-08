@@ -32,7 +32,7 @@ describe('InfoPanel', () => {
             wrapper,
         });
         expect(container).toBeInTheDocument();
-        expect(screen.getByText('Welcome to TRADERS ARENA!')).toBeInTheDocument();
+        expect(screen.getByText('Welcome to GLE TRADERS!')).toBeInTheDocument();
     });
 
     it('should render the closing of the info panel on close icon click', () => {

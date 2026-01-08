@@ -22,6 +22,7 @@ import RiskManagementCalculator from '../riskManagementCalculator';
 import Strategy from '../strategy';
 import Copytrading from '../copytrading';
 import Botlist from '../botlist';
+import Salia from '../salia';
 import Trader from '../trader';
 import Smartedge from '../smartedge';
 import Signals from '../signals';
@@ -60,7 +61,7 @@ const AppWrapper = observer(() => {
     const Dptool = lazy(() => import('../dptool/dptool'));
 
 
-    const hash = ['dashboard', 'bot_builder', 'chart', 'botlist', 'trader', 'finesttool', 'copytrading', 'dptool', 'smartedge', 'signals'];
+    const hash = ['dashboard', 'bot_builder', 'chart', 'botlist', 'salia', 'trader', 'finesttool', 'copytrading', 'dptool', 'smartedge', 'signals'];
 
     let tab_value: number | string = active_tab;
     const GetHashedValue = (tab: number) => {
@@ -197,28 +198,6 @@ const AppWrapper = observer(() => {
                         <div
                             label={
                                 <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center', justifyContent: 'flex-start', fontSize: '12px' }}>
-                                    <FaBolt style={{ marginRight: '8px' }} />
-                                    <Localize i18n_default_text='SpeedBot' />
-                                </span>
-                            }
-                            id={TAB_IDS[DBOT_TABS.SPEEDBOT]}
-                        >
-                            <SpeedBot />
-                        </div>
-                        <div
-                            label={
-                                <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center', justifyContent: 'flex-start', fontSize: '12px' }}>
-                                    <FaChartLine style={{ marginRight: '8px' }} />
-                                    <Localize i18n_default_text='Charts' />
-                                </span>
-                            }
-                            id={TAB_IDS[DBOT_TABS.CHART]}
-                        >
-                            <Chart />
-                        </div>
-                        <div
-                            label={
-                                <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center', justifyContent: 'flex-start', fontSize: '12px' }}>
                                     <FaExchangeAlt size={14} />
                                     Free Bots
                                 </span>
@@ -230,6 +209,18 @@ const AppWrapper = observer(() => {
                         <div
                             label={
                                 <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center', justifyContent: 'flex-start', fontSize: '12px' }}>
+                                    <FaLightbulb size={14} />
+                                    Salia Pro Tool
+                                </span>
+                            }
+                            id='id-salia'
+                        >
+                            <Salia />
+                        </div>
+                       
+                        <div
+                            label={
+                                <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center', justifyContent: 'flex-start', fontSize: '12px' }}>
                                     <FaChartLine size={14} />
                                     Trader
                                 </span>
@@ -238,17 +229,7 @@ const AppWrapper = observer(() => {
                         >
                             <Trader />
                         </div>
-                        <div
-                            label={
-                                <span style={{ color: '#ffffff', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center', justifyContent: 'flex-start', fontSize: '12px' }}>
-                                    <FaChartBar size={14} />
-                                    Analysis Tools
-                                </span>
-                            }
-                            id='id-finesttool'
-                        >
-                            <Finesttool />
-                        </div>
+                        
 
                         <div
                             label={
