@@ -50,8 +50,9 @@
     height: 100%;
     background: linear-gradient(
         135deg,
-        rgba(15, 23, 42, 0.9) 0%,
-        rgba(30, 41, 59, 0.8) 100%
+        rgba(168, 85, 247, 0.85) 0%,
+        rgba(255, 107, 157, 0.8) 50%,
+        rgba(147, 51, 234, 0.85) 100%
     );
     z-index: 1;
 }
@@ -70,9 +71,9 @@
 
 .geometricShape1, .geometricShape2, .geometricShape3 {
     position: absolute;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
+    background: linear-gradient(135deg, #FF6B9D, #A855F7);
     border-radius: 8px;
-    opacity: 0.1;
+    opacity: 0.2;
 }
 
 .geometricShape1 {
@@ -116,14 +117,14 @@
     z-index: 2;
     
     // Elegant glass morphism effect
-    background: var(--surface);
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px) saturate(180%);
     border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 
-        0 25px 50px rgba(0, 0, 0, 0.25),
-        0 0 100px rgba(59, 130, 246, 0.05),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        0 25px 50px rgba(168, 85, 247, 0.3),
+        0 0 100px rgba(255, 107, 157, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 // Logo container
@@ -141,7 +142,8 @@
         object-fit: contain;
         filter: 
             drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3))
-            drop-shadow(0 0 20px rgba(59, 130, 246, 0.2));
+            drop-shadow(0 0 20px rgba(255, 107, 157, 0.4))
+            drop-shadow(0 0 40px rgba(168, 85, 247, 0.3));
         user-select: none;
         position: relative;
         z-index: 2;
@@ -154,9 +156,9 @@
         transform: translate(-50%, -50%);
         width: 120px;
         height: 120px;
-        background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
-        opacity: 0.15;
-        filter: blur(20px);
+        background: radial-gradient(circle, #FF6B9D 0%, #A855F7 50%, transparent 70%);
+        opacity: 0.4;
+        filter: blur(25px);
         animation: gentlePulse 4s infinite ease-in-out;
     }
 }
@@ -195,12 +197,13 @@
     .companyName {
         font-size: 2rem;
         font-weight: 800;
-        background: linear-gradient(135deg, var(--gold) 0%, #FBBF24 100%);
+        background: linear-gradient(135deg, #FF6B9D 0%, #FFB3C6 50%, #A855F7 100%);
         background-size: 200% 200%;
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         letter-spacing: -0.02em;
+        animation: gradientShift 3s ease infinite;
     }
 }
 
@@ -250,15 +253,18 @@
         font-weight: 700;
         background: linear-gradient(
             135deg,
-            var(--primary) 0%,
-            var(--accent) 50%,
-            var(--secondary) 100%
+            #FF6B9D 0%,
+            #FF8FA3 25%,
+            #A855F7 50%,
+            #9333EA 75%,
+            #FF6B9D 100%
         );
         background-size: 200% 200%;
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         letter-spacing: -0.01em;
+        animation: gradientShift 4s ease infinite;
     }
 }
 
@@ -287,10 +293,18 @@
     width: 0;
     border-radius: 3px;
     background: linear-gradient(90deg, 
-        var(--primary) 0%, 
-        var(--accent) 100%);
+        #FF6B9D 0%, 
+        #FF8FA3 25%,
+        #A855F7 50%,
+        #9333EA 75%,
+        #FF6B9D 100%);
+    background-size: 200% 100%;
     position: relative;
     transition: width 0.3s ease;
+    box-shadow: 
+        0 0 10px rgba(255, 107, 157, 0.5),
+        0 0 20px rgba(168, 85, 247, 0.4);
+    animation: progressGradient 2s linear infinite;
     
     .progressGlow {
         position: absolute;
@@ -300,7 +314,7 @@
         bottom: 0;
         background: linear-gradient(90deg, 
             transparent, 
-            rgba(255, 255, 255, 0.4), 
+            rgba(255, 255, 255, 0.6), 
             transparent);
         animation: shimmer 2s infinite;
         transform: translateX(-100%);
@@ -335,8 +349,9 @@
     .spinnerCircle {
         width: 100%;
         height: 100%;
-        border: 2px solid transparent;
-        border-top: 2px solid var(--accent);
+        border: 2px solid rgba(255, 107, 157, 0.2);
+        border-top: 2px solid #FF6B9D;
+        border-right: 2px solid #A855F7;
         border-radius: 50%;
         animation: spin 1s linear infinite;
     }
@@ -378,6 +393,24 @@
     }
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes progressGradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 200% 0%;
     }
 }
 
